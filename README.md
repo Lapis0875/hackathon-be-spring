@@ -77,6 +77,19 @@ src/test/java/com/hackathon/api/AuthFlowTest.java
 docs/auth-contract.md                shared FE/BE contract
 ```
 
+## Reference pack
+
+`docs/refs/` holds Context7 snapshots of the official docs, grouped as:
+
+- **Core stack**: Spring Boot 4.1, Spring Framework 7, Spring Security 7, Spring Data JPA, Hibernate 7, springdoc, jjwt, HikariCP, JUnit, Gradle
+- **Relational databases**: PostgreSQL (types, indexes, upsert/COPY, pgjdbc), MySQL, MariaDB, SQL Server, Oracle, H2, Spring Data JDBC, Flyway, Liquibase, jOOQ, MyBatis, Querydsl, Testcontainers
+- **File and image data**: multipart upload, streaming downloads, AWS S3 SDK v2 (presign, Transfer Manager), Spring Cloud AWS, MinIO, Apache Tika, Thumbnailator, TwelveMonkeys ImageIO, Hibernate LOBs
+- **CSV and spreadsheets**: Commons CSV, OpenCSV, FastCSV, Spring Batch CSV import, Apache POI
+
+Start from [`docs/refs/INDEX.md`](docs/refs/INDEX.md): each topic lists its docs version, the project version (or "not a dependency yet"), and the pinned Context7 ID. Entries marked "not a dependency yet" document options you can add when a feature needs them.
+
+Refresh or extend: edit `docs/refs/manifest.json`, then run `node scripts/fetch-refs.mjs` (`--force` to refetch, `--only <text>` to filter). Requires Node ≥ 22.13 and `npx ctx7 login` (or `CONTEXT7_API_KEY`); each entry costs one Context7 API call. The app itself does not need Node.
+
 ## Extending
 
 Add a domain (example: `post`):

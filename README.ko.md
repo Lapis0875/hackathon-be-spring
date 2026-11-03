@@ -77,6 +77,19 @@ src/test/java/com/hackathon/api/AuthFlowTest.java
 docs/auth-contract.md                FE/BE 공유 계약
 ```
 
+## 참조 팩
+
+`docs/refs/`에 Context7에서 받아 둔 공식 문서 스냅샷이 있습니다. 구성은 다음과 같습니다.
+
+- **핵심 스택**: Spring Boot 4.1, Spring Framework 7, Spring Security 7, Spring Data JPA, Hibernate 7, springdoc, jjwt, HikariCP, JUnit, Gradle
+- **관계형 DB**: PostgreSQL(타입, 인덱스, upsert/COPY, pgjdbc), MySQL, MariaDB, SQL Server, Oracle, H2, Spring Data JDBC, Flyway, Liquibase, jOOQ, MyBatis, Querydsl, Testcontainers
+- **파일·이미지 데이터**: multipart 업로드, 스트리밍 다운로드, AWS S3 SDK v2(presign, Transfer Manager), Spring Cloud AWS, MinIO, Apache Tika, Thumbnailator, TwelveMonkeys ImageIO, Hibernate LOB
+- **CSV·스프레드시트**: Commons CSV, OpenCSV, FastCSV, Spring Batch CSV 적재, Apache POI
+
+[`docs/refs/INDEX.md`](docs/refs/INDEX.md)에서 시작하세요. 주제별 문서 버전, 프로젝트 버전(또는 "아직 의존성 아님"), 고정된 Context7 ID가 정리되어 있습니다. "아직 의존성 아님" 항목은 기능에 필요할 때 추가할 수 있는 선택지입니다.
+
+갱신·추가: `docs/refs/manifest.json`을 수정한 뒤 `node scripts/fetch-refs.mjs` 실행(`--force` 재수집, `--only <text>` 필터). Node 22.13 이상과 `npx ctx7 login`(또는 `CONTEXT7_API_KEY`)이 필요하고, 항목 하나당 Context7 API 호출 1회를 씁니다. 앱 실행에는 Node가 필요 없습니다.
+
 ## 확장하기
 
 새 도메인 추가(예: `post`):
